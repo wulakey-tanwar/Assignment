@@ -1,14 +1,24 @@
-#include <bits/stdc++.h>
-typedef long long LL;
+#include <iostream>
+
 using namespace std;
 
 int main(){
-    LL s[5];
-    LL d = 0;
-    for(int i = 0; i < 5; i++){
-        cin >> s[i];
-        d += s[i];
-    }
-    sort(s,s+5);
-    cout << d-s[4] << " " << d-s[0] << endl;
+  long int a[5],min,max,sum=0;
+  for(int i=0;i<5;i++){
+      cin>>a[i];
+      sum+=a[i];
+      
+  }
+  min=a[0];
+  for(int i=0;i<5;i++){
+      if(min>a[i])
+      min=a[i];
+  }
+  max=a[0];
+  for(int i=0;i<5;i++){
+      if(max<a[i])
+      max=a[i];
+  }
+  cout<<sum-max<<" "<< sum-min;
+  return 0;
 }
